@@ -110,6 +110,7 @@
             this.Controls.Add(this.usernameTb);
             this.Name = "loginForm";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.loginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
