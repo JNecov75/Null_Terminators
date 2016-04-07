@@ -29,7 +29,7 @@ namespace ICC
                 myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
                 myDatabaseConnection.Open(); // open connection to database
 
-                sqlQuery = "CREATE TABLE user (userId VARCHAR(10) PRIMARY KEY, firstName VARCHAR(30), lastName VARCHAR(30), email VARCHAR(50), age INTEGER," +
+                sqlQuery = "CREATE TABLE users (userId VARCHAR(10) PRIMARY KEY, firstName VARCHAR(30), lastName VARCHAR(30), email VARCHAR(50), age INTEGER," +
                 "sex VARCHAR(1), employeeType INTEGER, commission FLOAT, password VARCHAR(10))";
 
                 SQLiteCommand command = new SQLiteCommand(sqlQuery, myDatabaseConnection);
