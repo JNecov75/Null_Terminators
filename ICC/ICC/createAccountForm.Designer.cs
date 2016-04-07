@@ -183,6 +183,7 @@
             this.createAccountButton.TabIndex = 16;
             this.createAccountButton.Text = "Create Account";
             this.createAccountButton.UseVisualStyleBackColor = true;
+            this.createAccountButton.Click += new System.EventHandler(this.createAccountButton_Click);
             // 
             // createAccountForm
             // 
@@ -208,6 +209,7 @@
             this.Controls.Add(this.fnameTb);
             this.Name = "createAccountForm";
             this.Text = "Create Account";
+            this.Load += new System.EventHandler(this.createAccountForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

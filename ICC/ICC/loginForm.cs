@@ -22,10 +22,16 @@ namespace ICC
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-            myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
-            myDatabaseConnection.Open(); // open connection to database
+            //myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
+            //myDatabaseConnection.Open(); // open connection to database
 
             
+        }
+
+        private void createAccountButton_Click(object sender, EventArgs e)
+        {
+            createAccountForm createAccountForm = new createAccountForm();
+            createAccountForm.ShowDialog();
         }
     }
 }
