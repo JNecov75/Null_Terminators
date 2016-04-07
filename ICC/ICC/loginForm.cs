@@ -26,7 +26,7 @@ namespace ICC
             string sqlQuery;
             if (!File.Exists("icc_db.s3db"))
             {
-                myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
+                myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.s3db;Version=3"); // identify connection string to database
                 myDatabaseConnection.Open(); // open connection to database
 
                 sqlQuery = "CREATE TABLE users (userId VARCHAR(10) PRIMARY KEY, firstName VARCHAR(30), lastName VARCHAR(30), email VARCHAR(50), age INTEGER," +
@@ -34,15 +34,11 @@ namespace ICC
 
                 SQLiteCommand command = new SQLiteCommand(sqlQuery, myDatabaseConnection);
                 command.ExecuteNonQuery();
+              //  myDatabaseConnection.Close();
 
-            }
-           
-           
-
+            }         
             //myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
             //myDatabaseConnection.Open(); // open connection to database
-
-
         }
 
         private void createAccountButton_Click(object sender, EventArgs e)
