@@ -36,16 +36,16 @@ namespace ICC
             fname = fnameTb.Text;
             lname = lnameTb.Text;
             email = emailTb.Text;
-            sex = sexTb.Text;
+            //sex = sexTb.Text;
             username = usernameTb.Text;
             password = passwordTb.Text;
-            age = int.Parse(ageTb.Text);
-            empType = int.Parse(empTypeTb.Text);
+            //age = int.Parse(ageTb.Text);
+            //empType = int.Parse(empTypeTb.Text);
 
             sqlCommand =
                 "INSERT INTO users (userId, firstName, lastName, email, age, sex, employeeType, password) VALUES ('" +
                 username + "', '" + fname + "', '" +
-                lname + "', '" + email + "', " + age + ", '" + sex + "', " + empType + ", '" + password + "')";
+                lname + "', '" + email + "', " /*+ age + ", '" + sex + "', " + empType + ", '"*/ + password + "')";
 
             SQLiteCommand command = new SQLiteCommand(sqlCommand, myDatabaseConnection);
             command.ExecuteNonQuery();
@@ -53,5 +53,14 @@ namespace ICC
             Close();
         }
 
+        private void radioEmployeeTypeDriver_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
