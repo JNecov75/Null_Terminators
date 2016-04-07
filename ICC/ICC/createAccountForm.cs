@@ -36,16 +36,31 @@ namespace ICC
             fname = fnameTb.Text;
             lname = lnameTb.Text;
             email = emailTb.Text;
-            //sex = sexTb.Text;
             username = usernameTb.Text;
             password = passwordTb.Text;
-            //age = int.Parse(ageTb.Text);
-            //empType = int.Parse(empTypeTb.Text);
+            age = int.Parse(ageTb.Text);
+            sex = "";
+            empType = 1;
+
+            if (radioEmployeeTypeDriver.Checked)
+                empType = 1;
+            else
+                if (radioEmployeeTypeManager.Checked)
+                empType = 2;
+            else
+                if (radioEmployeeTypeOwner.Checked)
+                empType = 3;
+
+            if (radioSexMale.Checked)
+                sex = "m";
+            else
+                if (radioSexFemale.Checked)
+                sex = "f";
 
             sqlCommand =
                 "INSERT INTO users (userId, firstName, lastName, email, age, sex, employeeType, password) VALUES ('" +
                 username + "', '" + fname + "', '" +
-                lname + "', '" + email + "', " /*+ age + ", '" + sex + "', " + empType + ", '"*/ + password + "')";
+                lname + "', '" + email + "', " + age + ", '" + sex + "', " + empType + ", '" + password + "')";
 
             SQLiteCommand command = new SQLiteCommand(sqlCommand, myDatabaseConnection);
             command.ExecuteNonQuery();

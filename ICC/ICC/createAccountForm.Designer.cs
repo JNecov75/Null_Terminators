@@ -47,10 +47,10 @@
             this.radioSexMale = new System.Windows.Forms.RadioButton();
             this.radioSexFemale = new System.Windows.Forms.RadioButton();
             this.employeeInfo = new System.Windows.Forms.GroupBox();
-            this.age = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.loginCredentials = new System.Windows.Forms.GroupBox();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.ageTb = new System.Windows.Forms.TextBox();
             this.employeeType.SuspendLayout();
             this.employeeInfo.SuspendLayout();
             this.loginCredentials.SuspendLayout();
@@ -236,9 +236,9 @@
             // employeeInfo
             // 
             this.employeeInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.employeeInfo.Controls.Add(this.ageTb);
             this.employeeInfo.Controls.Add(this.radioSexFemale);
             this.employeeInfo.Controls.Add(this.radioSexMale);
-            this.employeeInfo.Controls.Add(this.age);
             this.employeeInfo.Controls.Add(this.fnameTb);
             this.employeeInfo.Controls.Add(this.fnameLabel);
             this.employeeInfo.Controls.Add(this.lnameTb);
@@ -252,19 +252,6 @@
             this.employeeInfo.TabIndex = 0;
             this.employeeInfo.TabStop = false;
             this.employeeInfo.Text = "Employee Info";
-            // 
-            // age
-            // 
-            this.age.DropDownHeight = 60;
-            this.age.DropDownWidth = 20;
-            this.age.FormattingEnabled = true;
-            this.age.IntegralHeight = false;
-            this.age.Location = new System.Drawing.Point(287, 24);
-            this.age.MaxDropDownItems = 85;
-            this.age.Name = "age";
-            this.age.Size = new System.Drawing.Size(50, 21);
-            this.age.Sorted = true;
-            this.age.TabIndex = 2;
             // 
             // label1
             // 
@@ -302,6 +289,13 @@
             this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // ageTb
+            // 
+            this.ageTb.Location = new System.Drawing.Point(288, 24);
+            this.ageTb.Name = "ageTb";
+            this.ageTb.Size = new System.Drawing.Size(49, 20);
+            this.ageTb.TabIndex = 11;
             // 
             // createAccountForm
             // 
@@ -356,9 +350,9 @@
         private System.Windows.Forms.RadioButton radioSexMale;
         private System.Windows.Forms.RadioButton radioSexFemale;
         private System.Windows.Forms.GroupBox employeeInfo;
-        private System.Windows.Forms.ComboBox age;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox loginCredentials;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.TextBox ageTb;
     }
 }
