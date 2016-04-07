@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ICC
@@ -22,10 +23,26 @@ namespace ICC
 
         private void loginForm_Load(object sender, EventArgs e)
         {
+            string sqlQuery;
+            if (!File.Exists("icc_db.s3db"))
+            {
+                myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
+                myDatabaseConnection.Open(); // open connection to database
+
+                sqlQuery = "CREATE TABLE user (userId VARCHAR(10) PRIMARY KEY, firstName VARCHAR(30), lastName VARCHAR(30), email VARCHAR(50), age INTEGER," +
+                "sex VARCHAR(1), employeeType INTEGER, commission FLOAT, password VARCHAR(10))";
+
+                SQLiteCommand command = new SQLiteCommand(sqlQuery, myDatabaseConnection);
+                command.ExecuteNonQuery();
+
+            }
+           
+           
+
             //myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
             //myDatabaseConnection.Open(); // open connection to database
 
-            
+
         }
 
         private void createAccountButton_Click(object sender, EventArgs e)
