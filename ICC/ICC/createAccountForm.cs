@@ -29,7 +29,29 @@ namespace ICC
 
         private void createAccountButton_Click(object sender, EventArgs e)
         {
-            
+            string fname, lname, email, sex, username, password;
+            int age, empType;
+            string sqlCommand;
+
+            fname = fnameTb.Text;
+            lname = lnameTb.Text;
+            email = emailTb.Text;
+            sex = sexTb.Text;
+            username = usernameTb.Text;
+            password = passwordTb.Text;
+            age = int.Parse(ageTb.Text);
+            empType = int.Parse(empTypeTb.Text);
+
+            sqlCommand =
+                "INSERT INTO users (userId, firstName, lastName, email, age, sex, employeeType, password) VALUES ('" +
+                username + "', '" + fname + "', '" +
+                lname + "', '" + email + "', " + age + ", '" + sex + "', " + empType + ", '" + password + "')";
+
+            SQLiteCommand command = new SQLiteCommand(sqlCommand, myDatabaseConnection);
+            command.ExecuteNonQuery();
+
+            Close();
         }
+
     }
 }

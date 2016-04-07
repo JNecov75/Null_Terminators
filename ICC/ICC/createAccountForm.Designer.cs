@@ -52,21 +52,21 @@
             this.fnameTb.Location = new System.Drawing.Point(68, 12);
             this.fnameTb.Name = "fnameTb";
             this.fnameTb.Size = new System.Drawing.Size(100, 20);
-            this.fnameTb.TabIndex = 0;
+            this.fnameTb.TabIndex = 1;
             // 
             // usernameTb
             // 
             this.usernameTb.Location = new System.Drawing.Point(269, 70);
             this.usernameTb.Name = "usernameTb";
             this.usernameTb.Size = new System.Drawing.Size(100, 20);
-            this.usernameTb.TabIndex = 1;
+            this.usernameTb.TabIndex = 7;
             // 
             // ageTb
             // 
             this.ageTb.Location = new System.Drawing.Point(269, 38);
             this.ageTb.Name = "ageTb";
             this.ageTb.Size = new System.Drawing.Size(27, 20);
-            this.ageTb.TabIndex = 2;
+            this.ageTb.TabIndex = 4;
             // 
             // emailTb
             // 
@@ -80,7 +80,7 @@
             this.empTypeTb.Location = new System.Drawing.Point(91, 64);
             this.empTypeTb.Name = "empTypeTb";
             this.empTypeTb.Size = new System.Drawing.Size(24, 20);
-            this.empTypeTb.TabIndex = 4;
+            this.empTypeTb.TabIndex = 6;
             // 
             // sexTb
             // 
@@ -94,7 +94,7 @@
             this.lnameTb.Location = new System.Drawing.Point(269, 12);
             this.lnameTb.Name = "lnameTb";
             this.lnameTb.Size = new System.Drawing.Size(100, 20);
-            this.lnameTb.TabIndex = 6;
+            this.lnameTb.TabIndex = 2;
             // 
             // fnameLabel
             // 
@@ -155,7 +155,7 @@
             this.passwordTb.Location = new System.Drawing.Point(269, 96);
             this.passwordTb.Name = "passwordTb";
             this.passwordTb.Size = new System.Drawing.Size(100, 20);
-            this.passwordTb.TabIndex = 13;
+            this.passwordTb.TabIndex = 8;
             // 
             // usernameLabel
             // 
@@ -180,7 +180,7 @@
             this.createAccountButton.Location = new System.Drawing.Point(144, 152);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(96, 23);
-            this.createAccountButton.TabIndex = 16;
+            this.createAccountButton.TabIndex = 9;
             this.createAccountButton.Text = "Create Account";
             this.createAccountButton.UseVisualStyleBackColor = true;
             this.createAccountButton.Click += new System.EventHandler(this.createAccountButton_Click);
