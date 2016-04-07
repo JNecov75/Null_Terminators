@@ -14,6 +14,7 @@ namespace ICC
 {
     public partial class loginForm : Form
     {
+        public static string currentUser;
         private SQLiteConnection myDatabaseConnection; // creating a database connection object
 
         public loginForm()
@@ -34,11 +35,11 @@ namespace ICC
 
                 SQLiteCommand command = new SQLiteCommand(sqlQuery, myDatabaseConnection);
                 command.ExecuteNonQuery();
-              //  myDatabaseConnection.Close();
+                myDatabaseConnection.Close();
 
             }         
-            //myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.sqlite;Version=3"); // identify connection string to database
-            //myDatabaseConnection.Open(); // open connection to database
+            myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.s3db;Version=3"); // identify connection string to database
+            myDatabaseConnection.Open(); // open connection to database
         }
 
         private void createAccountButton_Click(object sender, EventArgs e)
@@ -49,7 +50,26 @@ namespace ICC
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            string username, password;
+            string sqlCommand;
+            //string sample1, sample2;
 
+            username = usernameTb.Text;
+            password = passwordTb.Text;
+            sqlCommand = "SELECT userId, password FROM users WHERE userId = '" + username + "'";
+            SQLiteCommand command = new SQLiteCommand(sqlCommand, myDatabaseConnection);
+            DataSet validUserTable = new DataSet();
+            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
+            dataAdapter.Fill(validUserTable);
+            //sample1 = validUserTable.Tables[0].Rows[0][0].ToString();
+            //sample2 = validUserTable.Tables[0].Rows[0][1].ToString();
+
+
+            if (validUserTable.Tables[0].Rows[0][0].ToString() == username && validUserTable.Tables[0].Rows[0][1].ToString() == password)
+            {
+                MessageBox.Show("Login success! Welcome " + username);
+                currentUser = username;
+            }
         }
 
         private void usernameTb_TextChanged(object sender, EventArgs e)
