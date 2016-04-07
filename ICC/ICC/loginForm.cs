@@ -46,5 +46,10 @@ namespace ICC
             createAccountForm createAccountForm = new createAccountForm();
             createAccountForm.ShowDialog();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

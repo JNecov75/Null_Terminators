@@ -40,7 +40,7 @@
             // usernameTb
             // 
             this.usernameTb.Location = new System.Drawing.Point(70, 20);
-            this.usernameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTb.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTb.Name = "usernameTb";
             this.usernameTb.Size = new System.Drawing.Size(76, 20);
             this.usernameTb.TabIndex = 0;
@@ -48,7 +48,7 @@
             // passwordTb
             // 
             this.passwordTb.Location = new System.Drawing.Point(70, 42);
-            this.passwordTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTb.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTb.Name = "passwordTb";
             this.passwordTb.Size = new System.Drawing.Size(76, 20);
             this.passwordTb.TabIndex = 1;
@@ -76,17 +76,18 @@
             // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(89, 65);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(56, 24);
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // forgotPasswordButton
             // 
             this.forgotPasswordButton.Location = new System.Drawing.Point(4, 105);
-            this.forgotPasswordButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.forgotPasswordButton.Margin = new System.Windows.Forms.Padding(2);
             this.forgotPasswordButton.Name = "forgotPasswordButton";
             this.forgotPasswordButton.Size = new System.Drawing.Size(103, 24);
             this.forgotPasswordButton.TabIndex = 5;
@@ -96,7 +97,7 @@
             // createAccountButton
             // 
             this.createAccountButton.Location = new System.Drawing.Point(4, 134);
-            this.createAccountButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createAccountButton.Margin = new System.Windows.Forms.Padding(2);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(103, 24);
             this.createAccountButton.TabIndex = 6;
@@ -116,7 +117,7 @@
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.passwordTb);
             this.Controls.Add(this.usernameTb);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "loginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.loginForm_Load);
