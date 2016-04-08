@@ -41,7 +41,7 @@
             // usernameTb
             // 
             this.usernameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.usernameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTb.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.usernameTb.Location = new System.Drawing.Point(17, 123);
             this.usernameTb.Margin = new System.Windows.Forms.Padding(2);
@@ -55,7 +55,7 @@
             // passwordTb
             // 
             this.passwordTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.passwordTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTb.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.passwordTb.Location = new System.Drawing.Point(17, 149);
             this.passwordTb.Margin = new System.Windows.Forms.Padding(2);

@@ -72,9 +72,14 @@ namespace ICC
             }
         }
 
-        private void usernameTb_TextChanged(object sender, EventArgs e)
+        private void usernameTb_TextChanged(object sender, EventArgs e)  //when text is changed
         {
+            usernameTb.ForeColor = System.Drawing.Color.Black;  //change text color to black
+        }
 
+        private void passwordTb_TextChanged(object sender, EventArgs e)  //when text is changed
+        {
+            usernameTb.ForeColor = System.Drawing.Color.Black;  //change text color to black
         }
 
         private void label3_Click(object sender, EventArgs e)

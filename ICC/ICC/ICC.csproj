@@ -71,6 +71,18 @@
     <Compile Include="forgotPasswordForm.Designer.cs">
       <DependentUpon>forgotPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="fullMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fullMenu.Designer.cs">
+      <DependentUpon>fullMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="limitedMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="limitedMenu.Designer.cs">
+      <DependentUpon>limitedMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forgotPasswordForm.resx">
       <DependentUpon>forgotPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fullMenu.resx">
+      <DependentUpon>fullMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
