@@ -86,5 +86,11 @@ namespace ICC
         {
 
         }
+
+        private void forgotPasswordButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            forgotPasswordForm fpForm = new forgotPasswordForm();
+            fpForm.ShowDialog();
+        }
     }
 }

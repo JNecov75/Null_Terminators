@@ -126,6 +126,8 @@ namespace ICC
                 {
                     MessageBox.Show(exception.Message);
                 }
+               
+                myDatabaseConnection.Close();
                 Close();
             }
         }
