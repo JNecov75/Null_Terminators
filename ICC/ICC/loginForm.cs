@@ -64,12 +64,22 @@ namespace ICC
             //sample1 = validUserTable.Tables[0].Rows[0][0].ToString();
             //sample2 = validUserTable.Tables[0].Rows[0][1].ToString();
 
-
+            if(validUserTable.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Login failed! The user does not exist.");
+            }
+            else
             if (validUserTable.Tables[0].Rows[0][0].ToString() == username && validUserTable.Tables[0].Rows[0][1].ToString() == password)
             {
                 MessageBox.Show("Login success! Welcome " + username);
                 currentUser = username;
             }
+            else
+            if (validUserTable.Tables[0].Rows[0][0].ToString() == username && validUserTable.Tables[0].Rows[0][1].ToString() != password)
+            {
+                MessageBox.Show("Login failed! Password is incorrect!");
+            }
+            
         }
 
         private void usernameTb_TextChanged(object sender, EventArgs e)  //when text is changed

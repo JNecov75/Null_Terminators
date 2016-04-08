@@ -33,38 +33,48 @@ namespace ICC
             DataSet validUserTable = new DataSet();
             SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
             dataAdapter.Fill(validUserTable);
-            username = validUserTable.Tables[0].Rows[0][0].ToString();
-            password = validUserTable.Tables[0].Rows[0][1].ToString();
 
-
-            try
+            if (validUserTable.Tables[0].Rows.Count == 0)
             {
-                SmtpClient client = new SmtpClient("smtp.gmail.com");
-                client.Port = 587;
-                client.EnableSsl = true;
-                client.Timeout = 100000;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential(
-                  "375icc@gmail.com", "icecreamforall");
-                MailMessage msg = new MailMessage();
-                msg.To.Add(email);
-                msg.From = new MailAddress("375icc@gmail.com");
-                msg.Subject = "ICC - Account Credentials";
-                msg.Body = "Hello, we noticed you forgot your credentials. Here is a quick reminder:\n User name: " +
-                           username + "\nPassword: " + password + "\nWe wish " +
-                           "you a great day!!";
-                client.Send(msg);
-                MessageBox.Show("Successfully Sent Message.");
+                MessageBox.Show(
+                    "Error! The email you entered is not valid or does not exist in the company's database. Please try again.");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
+                username = validUserTable.Tables[0].Rows[0][0].ToString();
+                password = validUserTable.Tables[0].Rows[0][1].ToString();
 
-            Close();
+
+                try
+                {
+                    SmtpClient client = new SmtpClient("smtp.gmail.com");
+                    client.Port = 587;
+                    client.EnableSsl = true;
+                    client.Timeout = 100000;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential(
+                        "375icc@gmail.com", "icecreamforall");
+                    MailMessage msg = new MailMessage();
+                    msg.To.Add(email);
+                    msg.From = new MailAddress("375icc@gmail.com");
+                    msg.Subject = "ICC - Account Credentials";
+                    msg.Body =
+                        "Hello, we noticed you forgot your credentials. Here is a quick reminder:\n User name: " +
+                        username + "\nPassword: " + password + "\nWe wish " +
+                        "you a great day!!";
+                    client.Send(msg);
+                    MessageBox.Show("Successfully Sent Message.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                Close();
+            }
         }
-    
+
 
         private void forgotPasswordForm_Load(object sender, EventArgs e)
         {
