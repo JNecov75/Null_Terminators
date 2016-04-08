@@ -26,25 +26,11 @@ namespace ICC
             myDatabaseConnection.Open(); // open connection to database
         }
 
-        bool checkText(string text)   // checks the validity of text
+        bool checkSpaces(string text) //  checks empty spaces at the begining of the string
         {
-            text.Trim();
-            for (int i = 0; i < text.Length; i++)
-            {
-                if ((text[i] <= 'A' || text[i] >= 'Z') && (text[i] <= 'a' || text[i] >= 'z'))
-                {
-                    return true;
-                }
-                else
-                {
-                    if (text[i] == ' ')
-                    {
-                        return false;
-                    }
-                   
-                }
-            }
-            return false;
+            if (text[0] == ' ')
+                return true; // true if it's begin with a space
+            return false; // otherwise; flase
         }
 
 
@@ -54,28 +40,19 @@ namespace ICC
             int age, empType;
             string sqlCommand, errorDetails = "";
 
-            //if (checkText(fnameTb.Text))
-           // {
-           //     MessageBox.Show("Success! All credentials entered are valid.");
-           // }
-           // else
-           if(!checkText(fnameTb.Text))
-            {
-                errorDetails += "First name has not met the requirements.\n";
-            }
-            if (string.IsNullOrWhiteSpace(fnameTb.Text))
+            if (string.IsNullOrWhiteSpace(fnameTb.Text) || checkSpaces(fnameTb.Text))
             {
                 errorDetails += "Please enter a valid first name\n";
             }
-            if (string.IsNullOrWhiteSpace(lnameTb.Text))
+            if (string.IsNullOrWhiteSpace(lnameTb.Text) || checkSpaces(lnameTb.Text))
             {
-                errorDetails +="Please enter a valid last name\n";
+                errorDetails += "Please enter a valid last name\n";
             }
-            if (string.IsNullOrWhiteSpace(emailTb.Text))
+            if (string.IsNullOrWhiteSpace(emailTb.Text) || checkSpaces(emailTb.Text))
             {
                 errorDetails += "Please enter a valid email address\n";
             }
-            if (string.IsNullOrWhiteSpace(usernameTb.Text))
+            if (string.IsNullOrWhiteSpace(usernameTb.Text) || checkSpaces(usernameTb.Text))
             {
                 errorDetails += "Please enter a valid user name\n";
             }
