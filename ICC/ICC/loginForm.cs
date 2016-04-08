@@ -73,6 +73,10 @@ namespace ICC
             {
                 MessageBox.Show("Login success! Welcome " + username);
                 currentUser = username;
+                
+                this.Hide();
+                fullMenu fullMenuForm = new fullMenu();
+                fullMenuForm.ShowDialog();
             }
             else
             if (validUserTable.Tables[0].Rows[0][0].ToString() == username && validUserTable.Tables[0].Rows[0][1].ToString() != password)
