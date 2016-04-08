@@ -83,6 +83,10 @@ namespace ICC
         {
 
         }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void forgotPasswordButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
