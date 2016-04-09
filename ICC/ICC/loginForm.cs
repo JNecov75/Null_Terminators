@@ -53,6 +53,7 @@ namespace ICC
         private void loginForm_Load(object sender, EventArgs e)
         {
             string sqlQuery;
+            string sqlQueryRoute, sqlQueryTruck, sqlQueryMasterInv, sqlQueryTruckInv;
             if (!File.Exists("icc_db.s3db"))
             {
                 myDatabaseConnection = new SQLiteConnection("Data Source=icc_db.s3db;Version=3"); // identify connection string to database
@@ -61,7 +62,26 @@ namespace ICC
                 sqlQuery = "CREATE TABLE users (userId VARCHAR(10) PRIMARY KEY, firstName VARCHAR(30), lastName VARCHAR(30), email VARCHAR(50), age INTEGER," +
                 "sex VARCHAR(1), employeeType INTEGER, commission FLOAT, password VARCHAR(10))";
 
+                sqlQueryRoute =
+                    "CREATE TABLE route (cityLabel VARCHAR(20) PRIMARY KEY, city VARCHAR(20), state VARCHAR(2), routeNumber INTEGER)";
+                sqlQueryTruck =
+                    "CREATE TABLE truck (truckId INTEGER PRIMARY KEY, cityLabel VARCHAR(20), userId VARCHAR(10), routeComplete BOOLEAN, inMaintenance BOOLEAN, FOREIGN KEY (cityLabel) REFERENCES route(cityLabel), FOREIGN KEY (userId) REFERENCES user(userID))";
+                sqlQueryMasterInv =
+                    "CREATE TABLE masterInventory (iceCreamId INTEGER PRIMARY KEY, name VARCHAR(30), quantity INTEGER, price FLOAT, promoPercentage FLOAT)";
+                sqlQueryTruckInv =
+                    "CREATE TABLE truckInventory (iceCreamId INTEGER PRIMARY KEY, truckId INTEGER, quantity INTEGER, FOREIGN KEY (truckId) REFERENCES truck (truckId))";
+
+
+
                 SQLiteCommand command = new SQLiteCommand(sqlQuery, myDatabaseConnection);
+                command.ExecuteNonQuery();
+                command.CommandText = sqlQueryRoute;
+                command.ExecuteNonQuery();
+                command.CommandText = sqlQueryTruck;
+                command.ExecuteNonQuery();
+                command.CommandText = sqlQueryMasterInv;
+                command.ExecuteNonQuery();
+                command.CommandText = sqlQueryTruckInv;
                 command.ExecuteNonQuery();
                 myDatabaseConnection.Close();
 
