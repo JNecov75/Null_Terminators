@@ -16,5 +16,11 @@ namespace ICC
         {
             InitializeComponent();
         }
+
+        private void importFilesButton_Click(object sender, EventArgs e)
+        {
+            importFilesForm importFiles = new importFilesForm();
+            importFiles.ShowDialog();
+        }
     }
 }
