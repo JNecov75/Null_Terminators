@@ -14,12 +14,40 @@ namespace ICC
 {
     public partial class loginForm : Form
     {
-        public static string currentUser;
+        //public static string currentUser;
         private SQLiteConnection myDatabaseConnection; // creating a database connection object
+        public User currentUser;
 
         public loginForm()
         {
             InitializeComponent();
+        }
+
+        public class User
+        {
+            private string userName;
+            int empType;
+
+            public User()
+            {
+                
+            }
+            public string UserName
+            {
+                get
+                {
+                    return userName;
+                }
+                set { userName = value; }
+            }
+
+            public int EmployeeType
+            {
+                get { return empType; }
+                set { empType = value; }
+            }
+            
+                     
         }
 
         private void loginForm_Load(object sender, EventArgs e)
@@ -52,11 +80,12 @@ namespace ICC
         {
             string username, password;
             string sqlCommand;
+            int employeeType;
             //string sample1, sample2;
 
             username = usernameTb.Text;
             password = passwordTb.Text;
-            sqlCommand = "SELECT userId, password FROM users WHERE userId = '" + username + "'";
+            sqlCommand = "SELECT userId, password, employeeType FROM users WHERE userId = '" + username + "'";
             SQLiteCommand command = new SQLiteCommand(sqlCommand, myDatabaseConnection);
             DataSet validUserTable = new DataSet();
             SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
@@ -72,7 +101,10 @@ namespace ICC
             if (validUserTable.Tables[0].Rows[0][0].ToString() == username && validUserTable.Tables[0].Rows[0][1].ToString() == password)
             {
                 MessageBox.Show("Login success! Welcome " + username);
-                currentUser = username;
+                currentUser = new User();
+                currentUser.UserName = username;
+                employeeType = int.Parse(validUserTable.Tables[0].Rows[0][2].ToString());
+                currentUser.EmployeeType = employeeType;
                 
                 this.Hide();
                 fullMenu fullMenuForm = new fullMenu();
