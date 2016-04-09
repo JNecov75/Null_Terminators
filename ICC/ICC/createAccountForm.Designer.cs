@@ -47,10 +47,10 @@
             this.radioSexMale = new System.Windows.Forms.RadioButton();
             this.radioSexFemale = new System.Windows.Forms.RadioButton();
             this.employeeInfo = new System.Windows.Forms.GroupBox();
+            this.ageTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.loginCredentials = new System.Windows.Forms.GroupBox();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.ageTb = new System.Windows.Forms.TextBox();
             this.employeeType.SuspendLayout();
             this.employeeInfo.SuspendLayout();
             this.loginCredentials.SuspendLayout();
@@ -253,6 +253,13 @@
             this.employeeInfo.TabStop = false;
             this.employeeInfo.Text = "Employee Info";
             // 
+            // ageTb
+            // 
+            this.ageTb.Location = new System.Drawing.Point(288, 24);
+            this.ageTb.Name = "ageTb";
+            this.ageTb.Size = new System.Drawing.Size(49, 20);
+            this.ageTb.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -289,13 +296,6 @@
             this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // ageTb
-            // 
-            this.ageTb.Location = new System.Drawing.Point(288, 24);
-            this.ageTb.Name = "ageTb";
-            this.ageTb.Size = new System.Drawing.Size(49, 20);
-            this.ageTb.TabIndex = 11;
             // 
             // createAccountForm
             // 

@@ -109,11 +109,15 @@ namespace ICC
             }
         }
 
+
+        //radioEmployeeTypeDriver_CheckChanged needs to be removed
         private void radioEmployeeTypeDriver_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
+
+        //label1_click needs to be removed
         private void label1_Click(object sender, EventArgs e)
         {
 

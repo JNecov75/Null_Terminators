@@ -135,7 +135,15 @@ namespace ICC
             {
                 MessageBox.Show("Login failed! Password is incorrect!");
             }
-            
+        }
+
+
+        //this code isn't working, I want to select all text when the textbox is tabbed into
+        private void usernameTb_Enter(object sender, EventArgs e) 
+        {
+            MessageBox.Show("username got keyboard focus");
+            usernameTb.SelectionStart = 0;
+            usernameTb.SelectionLength = usernameTb.Text.Length;
         }
 
         private void usernameTb_TextChanged(object sender, EventArgs e)  //when text is changed
@@ -143,17 +151,20 @@ namespace ICC
             usernameTb.ForeColor = System.Drawing.Color.Black;  //change text color to black
         }
 
-        private void passwordTb_TextChanged(object sender, EventArgs e)  //when text is changed
+        private void passwordTb_TextChanged_1(object sender, EventArgs e)  //when text is changed
         {
-            usernameTb.ForeColor = System.Drawing.Color.Black;  //change text color to black
+            passwordTb.ForeColor = System.Drawing.Color.Black;  //change text color to black
+            passwordTb.PasswordChar = '*';
         }
 
-        
 
+        //label2_click needs to be removed
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
+
+        //label3_click needs to be removed
         private void label3_Click(object sender, EventArgs e)
         {
 
