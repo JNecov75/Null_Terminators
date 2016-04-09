@@ -16,5 +16,10 @@ namespace ICC
         {
             InitializeComponent();
         }
+
+        private void fullMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -190,6 +190,7 @@
             this.Controls.Add(this.importFilesButton);
             this.Name = "fullMenu";
             this.Text = "Ice Cream Company";
+            this.Load += new System.EventHandler(this.fullMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
