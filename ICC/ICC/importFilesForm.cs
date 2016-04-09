@@ -80,7 +80,7 @@ namespace ICC
             string date;
             string line;
             string sqlCommand;
-            
+            //some of these werent used,
 
 
             if (citiesFileRadio.Checked)
@@ -90,14 +90,14 @@ namespace ICC
                 
                     try
                     {
-                        var lLine = File.ReadLines(theDialog.FileName).Last();
-                        lastLineSplit = lLine.Split(spacedelim,StringSplitOptions.RemoveEmptyEntries);
-                        linesOfDataFromFile = int.Parse(lastLineSplit[1]);
-                        var linecount = File.ReadLines(theDialog.FileName).Count();
+                        var lLine = File.ReadLines(theDialog.FileName).Last(); //this will go to the last line and store it in a string. var is basically a type determined by a functions return type. here it is string
+                        lastLineSplit = lLine.Split(spacedelim,StringSplitOptions.RemoveEmptyEntries);//this splits the first line with a space delimeter. so now you have a string array where each index has a value.
+                        linesOfDataFromFile = int.Parse(lastLineSplit[1]); //tail says "T 003" so the array looks like ["T","003"] so i take the string "003" and parse the int out of it
+                        var linecount = File.ReadLines(theDialog.FileName).Count();//this calculates the actual lines in the file and returns an int. var here is an int.
 
                         myStream = File.OpenText(theDialog.FileName);
                         firstLine = myStream.ReadLine();
-                        firstLineSplit = firstLine.Split(tabDelim, StringSplitOptions.RemoveEmptyEntries);
+                        firstLineSplit = firstLine.Split(tabDelim, StringSplitOptions.RemoveEmptyEntries);//same as above but for line 1 and retrieving the date string
                         date = firstLineSplit[1];
 
                         if (linesOfDataFromFile != (linecount - 2))
