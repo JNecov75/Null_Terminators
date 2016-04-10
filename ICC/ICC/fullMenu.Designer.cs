@@ -52,6 +52,7 @@
             this.importFilesButton.TabIndex = 0;
             this.importFilesButton.Text = "Import Files";
             this.importFilesButton.UseVisualStyleBackColor = true;
+            this.importFilesButton.Click += new System.EventHandler(this.importFilesButton_Click);
             // 
             // maintenanceButton
             // 

@@ -17,9 +17,10 @@ namespace ICC
             InitializeComponent();
         }
 
-        private void fullMenu_Load(object sender, EventArgs e)
+        private void importFilesButton_Click(object sender, EventArgs e)
         {
-
+            importFilesForm importFiles = new importFilesForm();
+            importFiles.ShowDialog();
         }
     }
 }
