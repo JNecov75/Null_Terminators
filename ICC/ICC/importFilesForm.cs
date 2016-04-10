@@ -30,7 +30,7 @@ namespace ICC
             theDialog = new OpenFileDialog();
             theDialog.Title = "Open batch file";
             theDialog.Filter = "TXT files|*.txt";
-            theDialog.InitialDirectory = @"D:\";
+            theDialog.InitialDirectory = @"W:\";
 
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
