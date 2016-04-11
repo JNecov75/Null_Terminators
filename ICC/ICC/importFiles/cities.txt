@@ -1,0 +1,7 @@
+HD 0100     2016-03-01
+Dearborn 1          Dearborn            MI
+Dearborn 2          Dearborn            MI
+Dearborn 3          Dearborn            MI
+Detroit 1           Detroit             MI
+Royal Oak 4         Royal Oak           MI
+T  0005

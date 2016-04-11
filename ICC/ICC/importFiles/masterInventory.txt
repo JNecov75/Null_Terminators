@@ -1,0 +1,6 @@
+HD 0106      2016-03-24
+00010005000250Double Scoop Cone
+00170003500100Chocolate Bar
+01180010000425Ice Cream Bonanza
+02000000100050Best Name Ever For Ice Cream
+T 4
